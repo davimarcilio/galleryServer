@@ -4,6 +4,7 @@
 
 ```js
 npm install
+npx prisma db seed
 npm run build
 npm start
 ```

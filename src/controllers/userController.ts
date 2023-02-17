@@ -8,7 +8,7 @@ import { patchSchema } from "../validator/user/patchUserValidator";
 export const userController = {
   registerUser: async (req: Request, res: Response) => {
     try {
-      const saltRounds = bcrypt.genSaltSync(10);
+      const saltRounds = bcrypt.genSaltSync(Number(process.env.SALT_ROUNDS));
 
       const { login, name, password } = registerSchema.parse(req.body);
 
